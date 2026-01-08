@@ -6,18 +6,16 @@
     <title>Keerthana K H | Portfolio</title>
 
     <style>
-        /* ===== Root Colors ===== */
         :root {
-            --bg-black: #0d0d0d;
-            --card-black: #151515;
+            --bg-black: #0b0b0b;
+            --card-black: #141414;
             --orange: #ff7a18;
             --orange-light: #ff9f43;
-            --text-light: #eaeaea;
-            --gray: #b5b5b5;
-            --glow: rgba(255, 122, 24, 0.6);
+            --text-light: #f1f1f1;
+            --gray: #bcbcbc;
+            --glow: rgba(255, 122, 24, 0.7);
         }
 
-        /* ===== Global ===== */
         * {
             box-sizing: border-box;
         }
@@ -25,20 +23,14 @@
         body {
             margin: 0;
             font-family: "Segoe UI", Arial, sans-serif;
-            background: radial-gradient(circle at top, #1a1a1a, var(--bg-black));
+            background: radial-gradient(circle at top, #1c1c1c, var(--bg-black));
             color: var(--text-light);
-            animation: pageFade 1s ease-in;
+            animation: fadeIn 1s ease-in;
         }
 
-        @keyframes pageFade {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .container {
@@ -47,145 +39,90 @@
             padding: 50px 20px;
         }
 
-        /* ===== Cards ===== */
         .card {
-            background: linear-gradient(145deg, #1b1b1b, var(--card-black));
-            border-radius: 16px;
+            background: linear-gradient(145deg, #1a1a1a, var(--card-black));
+            border-radius: 18px;
             padding: 35px;
             margin-bottom: 35px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.6);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
-        .card::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, var(--glow), transparent 60%);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .card:hover::before {
-            opacity: 0.25;
-        }
-
         .card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 50px rgba(255, 122, 24, 0.25);
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(255, 122, 24, 0.3);
         }
 
-        /* ===== Headings ===== */
+        /* Profile Image */
+        .profile-pic {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-pic img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--orange);
+            box-shadow: 0 0 20px var(--glow);
+            animation: pulseGlow 2.5s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            from { box-shadow: 0 0 15px var(--glow); }
+            to { box-shadow: 0 0 40px var(--orange); }
+        }
+
         h1 {
             font-size: 36px;
+            text-align: center;
             margin-bottom: 10px;
             background: linear-gradient(90deg, var(--orange), var(--orange-light));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: glowText 2s infinite alternate;
-        }
-
-        @keyframes glowText {
-            from {
-                text-shadow: 0 0 10px var(--glow);
-            }
-            to {
-                text-shadow: 0 0 20px var(--orange);
-            }
         }
 
         h2 {
             color: var(--orange);
             margin-bottom: 15px;
-            position: relative;
-        }
-
-        h2::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -6px;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--orange), var(--orange-light));
-            transition: width 0.4s ease;
-        }
-
-        .card:hover h2::after {
-            width: 80px;
         }
 
         p {
+            text-align: center;
             color: var(--gray);
-            font-size: 16px;
             line-height: 1.8;
         }
 
-        /* ===== Lists ===== */
         ul {
             padding-left: 20px;
+            line-height: 1.8;
         }
 
         ul li {
             margin-bottom: 10px;
-            color: var(--text-light);
-            position: relative;
-            animation: slideIn 0.6s ease forwards;
         }
 
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-15px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        /* ===== Links ===== */
         a {
             color: var(--orange-light);
             text-decoration: none;
             font-weight: 500;
-            position: relative;
         }
 
-        a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -3px;
-            width: 0;
-            height: 2px;
-            background: var(--orange);
-            transition: width 0.3s ease;
-        }
-
-        a:hover::after {
-            width: 100%;
-        }
-
-        /* ===== Social ===== */
-        .social-links li {
-            list-style: none;
-            margin-bottom: 12px;
-            font-size: 17px;
-        }
-
-        /* ===== Footer ===== */
         footer {
             text-align: center;
             color: #888;
             margin-top: 50px;
             font-size: 14px;
-            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 28px; }
+            .profile-pic img {
+                width: 120px;
+                height: 120px;
+            }
         }
     </style>
 </head>
@@ -195,10 +132,13 @@
 
         <!-- Header -->
         <div class="card">
+            <div class="profile-pic">
+                <img src="profile.jpg" alt="Keerthana Profile">
+            </div>
             <h1>Keerthana K H</h1>
             <p>
                 Engineering student learning <strong>Python</strong> and <strong>problem-solving</strong>.
-                Building consistency through daily practice, projects, and GitHub contributions.
+                Building consistency through daily learning and GitHub practice.
             </p>
         </div>
 
@@ -206,14 +146,21 @@
         <div class="card">
             <h2>Python 30-Day Learning Journey</h2>
             <ul>
-                <li><strong>Day 1:</strong> Python basics & first program</li>
-                <li><strong>Day 2:</strong> Variables, data types, operators</li>
-                <li><strong>Day 3:</strong> Input/output, f-strings</li>
-                <li><strong>Day 4:</strong> Strings & slicing</li>
-                <li><strong>Day 5:</strong> Operators & expressions</li>
-                <li><strong>Day 6:</strong> Lists & list methods</li>
-                <li><strong>Day 7:</strong> Lists, tuples, sets</li>
-                <li><strong>Day 8:</strong> Dictionaries & dictionary methods</li>
+                <li><strong>Day 1:</strong> Introduction to Python, what Python is used for, installing Python, and writing the first <code>print()</code> program.</li>
+
+                <li><strong>Day 2:</strong> Understanding variables, assigning values, basic data types (int, float, string, boolean), and simple arithmetic operations.</li>
+
+                <li><strong>Day 3:</strong> Taking user input using <code>input()</code>, type conversion, using f-strings, and writing small input-output programs.</li>
+
+                <li><strong>Day 4:</strong> String concepts such as indexing, slicing, string methods, and basic string manipulation programs.</li>
+
+                <li><strong>Day 5:</strong> Python operators including arithmetic, relational, logical, assignment, and membership operators with examples.</li>
+
+                <li><strong>Day 6:</strong> Lists in Python, creating lists, accessing elements, list methods, updating values, and nested lists.</li>
+
+                <li><strong>Day 7:</strong> Tuples and sets, differences between list, tuple, and set, basic operations on tuples and sets.</li>
+
+                <li><strong>Day 8:</strong> Dictionaries in Python, creating dictionaries, accessing keys and values, adding and updating items, removing elements, and dictionary methods.</li>
             </ul>
         </div>
 
@@ -222,18 +169,17 @@
             <h2>GitHub</h2>
             <p>
                 🔗 <a href="https://github.com/keerthanakh89/Python-Learning-Journey" target="_blank">
-                    Python Learning Journey Repository
-                </a>
+                Python Learning Journey Repository</a>
             </p>
         </div>
 
         <!-- Social -->
         <div class="card">
             <h2>Connect with Me</h2>
-            <ul class="social-links">
-                <li>💼 <a href="https://www.linkedin.com/in/keerthana-k-h-932a1b303" target="_blank">LinkedIn</a></li>
-                <li>🐦 <a href="https://x.com/KeerthanaK44810" target="_blank">Twitter (X)</a></li>
-            </ul>
+            <p>
+                💼 <a href="https://www.linkedin.com/in/keerthana-k-h-932a1b303" target="_blank">LinkedIn</a> |
+                🐦 <a href="https://x.com/KeerthanaK44810" target="_blank">Twitter (X)</a>
+            </p>
         </div>
 
         <footer>
