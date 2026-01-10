@@ -18,6 +18,7 @@
 
         * {
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -110,6 +111,55 @@
             font-weight: 500;
         }
 
+        /* Skills */
+        .skill {
+            margin-bottom: 18px;
+        }
+
+        .skill span {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .bar {
+            background: #222;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 10px;
+            background: linear-gradient(90deg, var(--orange), var(--orange-light));
+            width: 0;
+            animation: fillBar 2s forwards;
+        }
+
+        @keyframes fillBar {
+            to { width: var(--level); }
+        }
+
+        /* Quote */
+        .quote {
+            font-style: italic;
+            text-align: center;
+            color: #ddd;
+        }
+
+        /* Scroll Button */
+        .top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--orange);
+            color: black;
+            border: none;
+            padding: 12px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 0 20px var(--glow);
+        }
+
         footer {
             text-align: center;
             color: #888;
@@ -128,68 +178,96 @@
 </head>
 
 <body>
-    <div class="container">
+<div class="container">
 
-        <!-- Header -->
-        <div class="card">
-            <div class="profile-pic">
-                <img src="profile.jpg" alt="Keerthana Profile">
-            </div>
-            <h1>Keerthana K H</h1>
-            <p>
-                Engineering student learning <strong>Python</strong> and <strong>problem-solving</strong>.
-                Building consistency through daily learning and GitHub practice.
-            </p>
+    <!-- Header -->
+    <div class="card">
+        <div class="profile-pic">
+            <img src="profile.jpg" alt="Keerthana Profile">
         </div>
-
-        <!-- Learning Journey -->
-        <div class="card">
-            <h2>Python 30-Day Learning Journey</h2>
-            <ul>
-                <li><strong>Day 1:</strong> Introduction to Python, what Python is used for, installing Python, and writing the first <code>print()</code> program.</li>
-
-                <li><strong>Day 2:</strong> Understanding variables, assigning values, basic data types (int, float, string, boolean), and simple arithmetic operations.</li>
-
-                <li><strong>Day 3:</strong> Taking user input using <code>input()</code>, type conversion, using f-strings, and writing small input-output programs.</li>
-
-                <li><strong>Day 4:</strong> String concepts such as indexing, slicing, string methods, and basic string manipulation programs.</li>
-
-                <li><strong>Day 5:</strong> Python operators including arithmetic, relational, logical, assignment, and membership operators with examples.</li>
-
-                <li><strong>Day 6:</strong> Lists in Python, creating lists, accessing elements, list methods, updating values, and nested lists.</li>
-
-                <li><strong>Day 7:</strong> Tuples and sets, differences between list, tuple, and set, basic operations on tuples and sets.</li>
-
-                <li><strong>Day 8:</strong> Dictionaries in Python, creating dictionaries, accessing keys and values, adding and updating items, removing elements, and dictionary methods.</li>
-                <li><strong>Day 9:</strong> Learned decision making in Python using if, else, elif, logical operators, indentation, and nested if-else with real-life examples.</li>
-                <li><strong>Day 10:</strong> Learned loops in Python including while loop, break and continue statements, nested while loops, and taking user input using loops.</li>
-
-
-            </ul>
-        </div>
-
-        <!-- GitHub -->
-        <div class="card">
-            <h2>GitHub</h2>
-            <p>
-                🔗 <a href="https://github.com/keerthanakh89/Python-Learning-Journey" target="_blank">
-                Python Learning Journey Repository</a>
-            </p>
-        </div>
-
-        <!-- Social -->
-        <div class="card">
-            <h2>Connect with Me</h2>
-            <p>
-                💼 <a href="https://www.linkedin.com/in/keerthana-k-h-932a1b303" target="_blank">LinkedIn</a> |
-                🐦 <a href="https://x.com/KeerthanaK44810" target="_blank">Twitter (X)</a>
-            </p>
-        </div>
-
-        <footer>
-            © 2026 Keerthana K H • Learning one step at a time 🚀
-        </footer>
-
+        <h1>Keerthana K H</h1>
+        <p>
+            Engineering student learning <strong>Python</strong> and <strong>problem-solving</strong>.
+            Building consistency through daily learning and GitHub practice.
+        </p>
     </div>
+
+    <!-- Learning Journey -->
+    <div class="card">
+        <h2>Python 30-Day Learning Journey</h2>
+        <ul>
+        <li><strong>Day 1:</strong> Introduction to Python, what Python is used for, installing Python, and writing the first <code>print()</code> program.</li>
+
+        <li><strong>Day 2:</strong> Understanding variables, assigning values, basic data types (int, float, string, boolean), and simple arithmetic operations.</li>
+
+        <li><strong>Day 3:</strong> Taking user input using <code>input()</code>, type conversion, using f-strings, and writing small input-output programs.</li>
+
+        <li><strong>Day 4:</strong> String concepts such as indexing, slicing, string methods, and basic string manipulation programs.</li>
+
+        <li><strong>Day 5:</strong> Python operators including arithmetic, relational, logical, assignment, and membership operators with examples.</li>
+
+        <li><strong>Day 6:</strong> Lists in Python, creating lists, accessing elements, list methods, updating values, and nested lists.</li>
+
+        <li><strong>Day 7:</strong> Tuples and sets, differences between list, tuple, and set, basic operations on tuples and sets.</li>
+
+        <li><strong>Day 8:</strong> Dictionaries in Python, creating dictionaries, accessing keys and values, adding and updating items, removing elements, and dictionary methods.</li>
+
+        <li><strong>Day 9:</strong> Learned decision making in Python using if, else, elif, logical operators, indentation, and nested if-else with real-life examples.</li>
+
+        <li><strong>Day 10:</strong> Learned loops in Python including while loop, break and continue statements, nested while loops, and taking user input using loops.</li>
+        </ul>
+    </div>
+
+    <!-- Skills -->
+    <div class="card">
+        <h2>Skills</h2>
+
+        <div class="skill">
+            <span>Python</span>
+            <div class="bar"><div class="bar-fill" style="--level:75%"></div></div>
+        </div>
+
+        <div class="skill">
+            <span>Problem Solving</span>
+            <div class="bar"><div class="bar-fill" style="--level:65%"></div></div>
+        </div>
+
+        <div class="skill">
+            <span>HTML & CSS</span>
+            <div class="bar"><div class="bar-fill" style="--level:70%"></div></div>
+        </div>
+    </div>
+
+    <!-- Motivation -->
+    <div class="card">
+        <h2>Daily Motivation</h2>
+        <p class="quote">“Consistency beats motivation. Small steps every day create big results.”</p>
+    </div>
+
+    <!-- GitHub -->
+    <div class="card">
+        <h2>GitHub</h2>
+        <p>
+            🔗 <a href="https://github.com/keerthanakh89/Python-Learning-Journey" target="_blank">
+            Python Learning Journey Repository</a>
+        </p>
+    </div>
+
+    <!-- Social -->
+    <div class="card">
+        <h2>Connect with Me</h2>
+        <p>
+            💼 <a href="https://www.linkedin.com/in/keerthana-k-h-932a1b303" target="_blank">LinkedIn</a> |
+            🐦 <a href="https://x.com/KeerthanaK44810" target="_blank">Twitter (X)</a>
+        </p>
+    </div>
+
+    <footer>
+        © 2026 Keerthana K H • Learning one step at a time 🚀
+    </footer>
+</div>
+
+<button class="top-btn" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
+
 </body>
 </html>
